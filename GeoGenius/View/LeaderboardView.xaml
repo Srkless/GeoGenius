@@ -1,0 +1,423 @@
+﻿<UserControl x:Class="GeoGenius.View.LeaderboardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GeoGenius.View"
+             mc:Ignorable="d" 
+             Width="1920" Height="1080">
+    <Grid>
+        <Image Source="/Images/MainWindowBackground.jpg" Stretch="Fill">
+            <Image.Effect>
+                <BlurEffect KernelType="Box" RenderingBias="Performance" Radius="8"/>
+            </Image.Effect>
+        </Image>
+
+      
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="800" Height="900">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="/Images/LeaderboardPanel.png">
+                </ImageBrush>
+            </StackPanel.Background>
+
+            <Button Width="550" Height="150" BorderThickness="0" Margin="0,110,0,0" 
+                    >
+                <Button.Content>
+                    <Grid Width="550" Height="150">
+                        <TextBlock
+                            Padding="40,0,0,10"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Left"
+                                    x:Name="firstPlaceUsername"
+                               FontFamily="Georgia"
+                               FontSize="50"
+                               FontWeight="Bold"
+                            Opacity="0.9">
+                            <TextBlock.Effect>
+                                <DropShadowEffect Color="#FF743411" BlurRadius="0" ShadowDepth="8" Opacity="0.5"/>
+                            </TextBlock.Effect>
+
+
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
+                                    <GradientStop Color="#fde9b3" Offset="0"/>
+                                    <GradientStop Color="white" Offset="0.5"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
+
+
+                        </TextBlock>
+
+                        <TextBlock
+                            Padding="0,0,40,10"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Right"
+                                    x:Name="firstPlaceScore"
+                               FontFamily="Georgia"
+                               FontSize="50"
+                               FontWeight="Bold"
+                            Opacity="0.9">
+                            <TextBlock.Effect>
+                                <DropShadowEffect Color="#FF743411" BlurRadius="0" ShadowDepth="8" Opacity="0.5"/>
+                            </TextBlock.Effect>
+
+
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
+                                    <GradientStop Color="#fde9b3" Offset="0"/>
+                                    <GradientStop Color="white" Offset="0.5"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
+
+
+                        </TextBlock>
+                    </Grid>
+                    
+                </Button.Content>
+                <Button.Background>
+                    <ImageBrush ImageSource="/Images/LeaderboardUserField.png" Stretch="Fill">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.1" CenterX="0.5"/>
+                                <SkewTransform CenterX="0.5" CenterY="0.1"/>
+                                <RotateTransform CenterX="0.5" CenterY="0.1"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </Button.Background>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" 
+          Background="{TemplateBinding Background}"
+          Opacity="1">
+                            <Border.Effect>
+                                <DropShadowEffect Color="#FF8E3C16" BlurRadius="10"/>
+                            </Border.Effect>
+                            <ContentPresenter HorizontalAlignment="Center" 
+VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <!-- Promijeni boju kada je miš iznad dugmeta -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Opacity" Value="0.9"/>
+                                <!-- Zlatna boja -->
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Opacity" Value="0.6"/>
+                                <!-- Zlatna boja -->
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Width="550" Height="150" BorderThickness="0" Margin="0,20,0,0" 
+                    >
+                <Button.Content>
+                    <Grid Width="550" Height="150">
+                        <TextBlock
+                            Padding="40,0,0,10"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Left"
+                                    x:Name="secondPlaceUsername"
+                               FontFamily="Georgia"
+                               FontSize="50"
+                               FontWeight="Bold"
+                            Opacity="0.9">
+                            <TextBlock.Effect>
+                                <DropShadowEffect Color="#FF743411" BlurRadius="0" ShadowDepth="8" Opacity="0.5"/>
+                            </TextBlock.Effect>
+
+
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
+                                    <GradientStop Color="#fde9b3" Offset="0"/>
+                                    <GradientStop Color="white" Offset="0.5"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
+
+
+                        </TextBlock>
+
+                        <TextBlock
+                            Padding="0,0,40,10"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Right"
+                                    x:Name="secondPlaceScore"
+                               FontFamily="Georgia"
+                               FontSize="50"
+                               FontWeight="Bold"
+                            Opacity="0.9">
+                            <TextBlock.Effect>
+                                <DropShadowEffect Color="#FF743411" BlurRadius="0" ShadowDepth="8" Opacity="0.5"/>
+                            </TextBlock.Effect>
+
+
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
+                                    <GradientStop Color="#fde9b3" Offset="0"/>
+                                    <GradientStop Color="white" Offset="0.5"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
+
+
+                        </TextBlock>
+                    </Grid>
+
+                </Button.Content>
+                <Button.Background>
+                    <ImageBrush ImageSource="/Images/LeaderboardUserField.png" Stretch="Fill" TileMode="None">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.1" CenterX="0.5"/>
+                                <SkewTransform CenterX="0.5" CenterY="0.1"/>
+                                <RotateTransform CenterX="0.5" CenterY="0.1"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </Button.Background>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" 
+          Background="{TemplateBinding Background}"
+          Opacity="1">
+                            <Border.Effect>
+                                <DropShadowEffect Color="#FF8E3C16" BlurRadius="10"/>
+                            </Border.Effect>
+                            <ContentPresenter HorizontalAlignment="Center" 
+VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <!-- Promijeni boju kada je miš iznad dugmeta -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Opacity" Value="0.9"/>
+                                <!-- Zlatna boja -->
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Opacity" Value="0.6"/>
+                                <!-- Zlatna boja -->
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Width="550" Height="150" BorderThickness="0" Margin="0,20,0,0" 
+                    >
+                <Button.Content>
+                    <Grid Width="550" Height="150">
+                        <TextBlock
+                            Padding="40,0,0,10"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Left"
+                                    x:Name="thirdPlaceUsername"
+                               FontFamily="Georgia"
+                               FontSize="50"
+                               FontWeight="Bold"
+                            Opacity="0.9">
+                            <TextBlock.Effect>
+                                <DropShadowEffect Color="#FF743411" BlurRadius="0" ShadowDepth="8" Opacity="0.5"/>
+                            </TextBlock.Effect>
+
+
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
+                                    <GradientStop Color="#fde9b3" Offset="0"/>
+                                    <GradientStop Color="white" Offset="0.5"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
+
+
+                        </TextBlock>
+
+                        <TextBlock
+                            Padding="0,0,40,10"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Right"
+                                    x:Name="thirdPlaceScore"
+                               FontFamily="Georgia"
+                               FontSize="50"
+                               FontWeight="Bold"
+                            Opacity="0.9">
+                            <TextBlock.Effect>
+                                <DropShadowEffect Color="#FF743411" BlurRadius="0" ShadowDepth="8" Opacity="0.5"/>
+                            </TextBlock.Effect>
+
+
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
+                                    <GradientStop Color="#fde9b3" Offset="0"/>
+                                    <GradientStop Color="white" Offset="0.5"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
+
+
+                        </TextBlock>
+                    </Grid>
+
+                </Button.Content>
+                <Button.Background>
+                    <ImageBrush ImageSource="/Images/LeaderboardUserField.png" Stretch="Fill" TileMode="None">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.1" CenterX="0.5"/>
+                                <SkewTransform CenterX="0.5" CenterY="0.1"/>
+                                <RotateTransform CenterX="0.5" CenterY="0.1"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </Button.Background>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" 
+          Background="{TemplateBinding Background}"
+          Opacity="1">
+                            <Border.Effect>
+                                <DropShadowEffect Color="#FF8E3C16" BlurRadius="10"/>
+                            </Border.Effect>
+                            <ContentPresenter HorizontalAlignment="Center" 
+VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <!-- Promijeni boju kada je miš iznad dugmeta -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Opacity" Value="0.9"/>
+                                <!-- Zlatna boja -->
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Opacity" Value="0.6"/>
+                                <!-- Zlatna boja -->
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Width="550" Height="150" BorderThickness="0" Margin="0,20,0,0" 
+                    >
+                <Button.Content>
+                    <Grid Width="550" Height="150">
+                        <TextBlock
+                            Padding="40,0,0,10"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Left"
+                                    x:Name="loggedPlaceUsername"
+                               FontFamily="Georgia"
+                               FontSize="50"
+                               FontWeight="Bold"
+                            Opacity="0.9">
+                            <TextBlock.Effect>
+                                <DropShadowEffect Color="#FF743411" BlurRadius="0" ShadowDepth="8" Opacity="0.5"/>
+                            </TextBlock.Effect>
+
+
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
+                                    <GradientStop Color="#FFFFBA00" Offset="0"/>
+                                    <GradientStop Color="#FFFEFFA0" Offset="0.5"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
+
+
+                        </TextBlock>
+
+                        <TextBlock
+                            Padding="0,0,40,10"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Right"
+                                    x:Name="loggedPlaceScore"
+                               FontFamily="Georgia"
+                               FontSize="50"
+                               FontWeight="Bold"
+                            Opacity="0.9">
+                            <TextBlock.Effect>
+                                <DropShadowEffect Color="#FF743411" BlurRadius="0" ShadowDepth="8" Opacity="0.5"/>
+                            </TextBlock.Effect>
+
+
+                            <TextBlock.Foreground>
+                                <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
+                                    <GradientStop Color="#FFFFBA00" Offset="0"/>
+                                    <GradientStop Color="#FFFEFFA0" Offset="0.5"/>
+                                </LinearGradientBrush>
+                            </TextBlock.Foreground>
+
+
+                        </TextBlock>
+                    </Grid>
+
+                </Button.Content>
+                <Button.Background>
+                    <ImageBrush ImageSource="/Images/LeaderboardUserField.png" Stretch="Fill" TileMode="None">
+                        <ImageBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.1" CenterX="0.5"/>
+                                <SkewTransform CenterX="0.5" CenterY="0.1"/>
+                                <RotateTransform CenterX="0.5" CenterY="0.1"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </ImageBrush.RelativeTransform>
+                    </ImageBrush>
+                </Button.Background>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" 
+          Background="{TemplateBinding Background}"
+          Opacity="1">
+                            <Border.Effect>
+                                <DropShadowEffect Color="#FF8E3C16" BlurRadius="10"/>
+                            </Border.Effect>
+                            <ContentPresenter HorizontalAlignment="Center" 
+VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <!-- Promijeni boju kada je miš iznad dugmeta -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Opacity" Value="0.9"/>
+                                <!-- Zlatna boja -->
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Opacity" Value="0.6"/>
+                                <!-- Zlatna boja -->
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
+
+        <Image Source="/Images/LeaderboardBanner.png" Width="500" VerticalAlignment="Top" Margin="0,30,0,0"/>
+        <Button Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Back_Click"
+                Margin="10">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/bBack.png"/>
+            </Button.Background>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border" 
+          Background="{TemplateBinding Background}"
+          Opacity="1">
+                        <Border.Effect>
+                            <DropShadowEffect Color="#FF8E3C16" BlurRadius="10"/>
+                        </Border.Effect>
+                        <ContentPresenter HorizontalAlignment="Center" 
+VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <!-- Promijeni boju kada je miš iznad dugmeta -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Opacity" Value="0.9"/>
+                            <!-- Zlatna boja -->
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Opacity" Value="0.6"/>
+                            <!-- Zlatna boja -->
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+    
+</UserControl>

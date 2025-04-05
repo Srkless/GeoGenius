@@ -1,0 +1,53 @@
+﻿<Window x:Class="GeoGenius.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GeoGenius"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        WindowState="Maximized"
+        Width="1920"
+        Height="1080"
+        WindowStyle="None"
+        ResizeMode="NoResize">
+    <Grid>
+        <Image Source="/Images/MainWindowBackground.jpg" Stretch="Fill">
+            <Image.Effect>
+                <BlurEffect KernelType="Box" RenderingBias="Performance" Radius="8"/>
+            </Image.Effect>
+        </Image>
+        <ContentControl x:Name="MainContent"/>
+
+        <Button Width="50" Height="50" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="10" Click="Exit_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Images/bExitImage.png"/>
+            </Button.Background>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border" 
+          Background="{TemplateBinding Background}"
+          Opacity="1">
+                        <Border.Effect>
+                            <DropShadowEffect Color="#FF8E3C16" BlurRadius="10"/>
+                        </Border.Effect>
+                        <ContentPresenter HorizontalAlignment="Center" 
+VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <!-- Promijeni boju kada je miš iznad dugmeta -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Opacity" Value="0.9"/>
+                            <!-- Zlatna boja -->
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Opacity" Value="0.6"/>
+                            <!-- Zlatna boja -->
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+</Window>
