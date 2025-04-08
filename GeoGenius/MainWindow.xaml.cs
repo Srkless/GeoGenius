@@ -1,5 +1,6 @@
 ﻿using GeoGenius.Model;
 using GeoGenius.View;
+using System.IO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,6 +24,8 @@ namespace GeoGenius
         {
             InitializeComponent();
             MainContent.Content = new MainView();
+            if (!File.Exists("users.txt"))
+                File.Create("users.txt").Dispose();
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
